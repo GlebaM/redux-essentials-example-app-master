@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 
 import { useDispatch } from 'react-redux'
-import { nanoid } from '@reduxjs/toolkit'
+// import { nanoid } from '@reduxjs/toolkit'
+import { v4 as uuidv4 } from 'uuid'
 import { postAdded } from './postsSlice'
 
 export const AddPostForm = () => {
@@ -17,7 +18,7 @@ export const AddPostForm = () => {
     e.preventDefault()
     if (!title || !content) return
 
-    dispatch(postAdded({ id: nanoid, title, content }))
+    dispatch(postAdded({ id: uuidv4(), title, content }))
 
     setTitle('')
     setContent('')
@@ -47,3 +48,5 @@ export const AddPostForm = () => {
     </section>
   )
 }
+
+export default AddPostForm

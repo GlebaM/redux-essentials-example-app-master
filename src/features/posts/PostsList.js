@@ -1,22 +1,21 @@
-import React from 'react'
 import { useSelector } from 'react-redux'
+import PostItem from './PostItem'
+import { TransitionGroup } from 'react-transition-group'
 
-export const PostsList = () => {
+const PostsList = () => {
   const posts = useSelector((state) => state.posts)
+
   console.log(posts)
 
-  const renderedPosts = posts.map((post) => (
-    <article className="post-excerpt" key={post.id}>
-      <h3>{post.title}</h3>
-      <p className="post-content">{post.content.substring(0, 100)}</p>
-    </article>
-  ))
-
   return (
-    <section className="posts-list">
-      <h2>Posts</h2>
-      {renderedPosts}
-    </section>
+    <TransitionGroup>
+      <section className="posts-list">
+        <h2>Posts</h2>
+        {posts.map((post) => (
+          <PostItem {...post} />
+        ))}
+      </section>
+    </TransitionGroup>
   )
 }
 

@@ -8,7 +8,8 @@ import {
 
 import { Navbar } from './app/Navbar'
 import PostsList from '../src/features/posts/PostsList'
-import { AddPostForm } from '../src/features/posts/AddPostForm'
+import AddPostForm from '../src/features/posts/AddPostForm'
+// import Anything from '../src/features/any/Anything'
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
               <Fragment>
                 <AddPostForm />
                 <PostsList />
+                {/* <Anything /> */}
               </Fragment>
             )}
           />
