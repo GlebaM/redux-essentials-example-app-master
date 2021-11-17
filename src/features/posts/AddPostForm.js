@@ -1,13 +1,22 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 import { useDispatch } from 'react-redux'
-// import { nanoid } from '@reduxjs/toolkit'
 import { v4 as uuidv4 } from 'uuid'
 import { postAdded } from './postsSlice'
+import Button from '../../components/UI/Button'
 
 export const AddPostForm = () => {
   const [title, setTitle] = useState('')
   const [content, setContent] = useState('')
+  const [isValid, setIsValid] = useState(false)
+
+  useEffect(() => {
+    if (!title || !content) {
+      setIsValid(false)
+    } else {
+      setIsValid(true)
+    }
+  }, [content, title])
 
   const dispatch = useDispatch()
 
@@ -16,7 +25,7 @@ export const AddPostForm = () => {
 
   const formSubmitHandler = (e) => {
     e.preventDefault()
-    if (!title || !content) return
+    if (!isValid) return
 
     dispatch(postAdded({ id: uuidv4(), title, content }))
 
@@ -35,6 +44,9 @@ export const AddPostForm = () => {
           name="postTitle"
           value={title}
           onChange={onTitleChanged}
+          placeholder="Type any post title."
+          style={{}}
+          autoFocus
         />
         <label htmlFor="postContent">Content:</label>
         <textarea
@@ -42,8 +54,11 @@ export const AddPostForm = () => {
           name="postContent"
           value={content}
           onChange={onContentChanged}
+          placeholder="Type post description."
         />
-        <button type="submit">Save Post</button>
+        <Button disabled={!isValid} type="submit">
+          Save Post
+        </Button>
       </form>
     </section>
   )

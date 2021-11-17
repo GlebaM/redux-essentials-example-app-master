@@ -1,5 +1,10 @@
+/* Beautifle colors */
+/* Dark red: hsla(2, 86%, 20%, 0.942) */
+/* Bright orange:  hsla(25, 96%, 60%, 0.942) */
+
 :root {
   --redux-color: #523680;
+  --redux-color-pale: hsla(263, 38%, 65%, 0.363);
 }
 
 body {
@@ -14,6 +19,7 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+  /* color: rgb(192, 219, 255, 0.75); */
 }
 
 p {
@@ -26,6 +32,17 @@ nav {
   display: flex;
   padding: 0;
   background: var(--redux-color);
+  background: content-box radial-gradient(skyblue, crimeson);
+  /* background: content-box
+    linear-gradient(
+      -25deg,
+      var(--redux-color),
+      var(--redux-color) 20%,
+      #1f87a6 50%,
+      var(--redux-color) 88%,
+      var(--redux-color) 100%
+    ); */
+  box-shadow: 0 3px 9px 0 rgb(146, 144, 144);
 }
 
 nav section {
@@ -43,7 +60,7 @@ nav a:active {
   padding: 0.25rem 1.5rem;
   border-radius: 4px;
   color: white !important;
-  background: #481499;
+  background: #9e9e9e;
 }
 
 nav a:first-of-type {
@@ -74,7 +91,7 @@ nav a:hover {
   top: -3px;
 }
 
-.badge {
+/* .badge {
   display: inline-block;
   padding: 0.25em 0.4em;
   font-size: 75%;
@@ -86,7 +103,7 @@ nav a:hover {
   border-radius: 0.25rem;
   color: #212529;
   background-color: #f8f9fa;
-}
+} */
 
 .navLinks :first-child {
   margin-left: 0;
@@ -96,8 +113,7 @@ nav a:hover {
 
 section {
   max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
   padding: 0 1.5rem;
 }
 
@@ -106,11 +122,6 @@ section h1 {
 }
 
 /* Posts list */
-
-.post h2 {
-  font-size: 2.5rem;
-  margin-bottom: 5px;
-}
 
 /* .post-excerpt {
   padding: 1.25rem 1.5rem 0.25rem;
@@ -132,18 +143,19 @@ section h1 {
   font-size: 1.5rem;
 } */
 
-p.post-content {
+/* p.post-content {
   margin-top: 10px;
-}
+} */
 
-.button {
+/* .button {
   display: inline-block;
   background: #1976d2;
-  color: white;
+  background-color: hsla(25, 96%, 60%, 1);
+  color: red;
   border-radius: 4px;
   font-weight: 700;
   padding: 0.75rem 1.5rem;
-}
+} */
 
 button:disabled,
 button:disabled:hover {
@@ -261,7 +273,7 @@ button.reaction-button {
 /* Notifications list */
 
 .notification {
-  border: 1px solid #eee;
+  border: 1px solid rgba(238, 238, 238, 0.87);
   padding: 0.5rem;
 }
 

@@ -754,9 +754,9 @@ button,
 [type='button'] {
   -webkit-appearance: none;
   display: inline-block;
-  border: 1px solid #0366ee;
+  border: 1px solid #523680;
+  background: #523680;
   border-radius: 4px;
-  background: #0366ee;
   color: #ffffff;
   font-weight: 600;
   font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica,
@@ -770,6 +770,7 @@ button,
   cursor: pointer;
   text-decoration: none;
   line-height: 1;
+  transition: all 0.25s ease;
 }
 
 .button:hover,
@@ -778,8 +779,9 @@ button:hover,
 [type='submit']:hover,
 [type='reset']:hover,
 [type='button']:hover {
-  border: 1px solid #0250bc;
-  background: #0250bc;
+  border: 1px solid #692680;
+  background-color: #672f74ea;
+
   color: #ffffff;
   text-decoration: none;
 }
@@ -796,8 +798,8 @@ button:active,
 [type='reset']:active,
 [type='button']:focus,
 [type='button']:active {
-  border: 1px solid #0250bc;
-  background: #0250bc;
+  border: 1px solid #692680;
+  background-color: #672f74ea;
   color: #ffffff;
   text-decoration: none;
 }

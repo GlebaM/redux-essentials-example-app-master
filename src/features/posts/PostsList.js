@@ -1,6 +1,26 @@
 import { useSelector } from 'react-redux'
-import PostItem from './PostItem'
+
 import { TransitionGroup } from 'react-transition-group'
+import PostItem from './PostItem'
+import styled from 'styled-components'
+
+const Section = styled.section`
+  position: relative;
+  transition: all 0.5s ease;
+
+  &.fade-enter {
+    opacity: 0;
+  }
+  &.fade-enter-active {
+    opacity: 1;
+  }
+  &.fade-exit {
+    opacity: 1;
+  }
+  &.fade-exit-active {
+    opacity: 0;
+  }
+`
 
 const PostsList = () => {
   const posts = useSelector((state) => state.posts)
@@ -8,15 +28,37 @@ const PostsList = () => {
   console.log(posts)
 
   return (
-    <TransitionGroup>
-      <section className="posts-list">
-        <h2>Posts</h2>
+    <Section className="posts-list">
+      <h2>Posts</h2>
+      <TransitionGroup component={null}>
         {posts.map((post) => (
-          <PostItem {...post} />
+          <PostItem key={post.id} {...post} />
         ))}
-      </section>
-    </TransitionGroup>
+      </TransitionGroup>
+    </Section>
   )
 }
 
 export default PostsList
+
+// import { useState, useEffect } from 'react'
+
+// const duration = '1'
+//   setInProp(true)
+
+//   return () => {
+//     setInProp(false)
+//   }
+// }, [setInProp])
+
+// <CSSTransition
+//   in={inProp}
+//   timeout={duration}
+//   classNames="fade"
+//   appear
+//   mountOnEnter
+// >
+//       </CSSTransition>
+
+// useEffect(() => {
+// const [inProp, setInProp] = useState(false)
