@@ -1,3 +1,4 @@
+// import { useEffect } from 'react'
 import { useSelector } from 'react-redux'
 
 import { TransitionGroup } from 'react-transition-group'
@@ -5,10 +6,10 @@ import PostItem from './PostItem'
 import styled from 'styled-components'
 
 const Section = styled.section`
-  position: relative;
+  /* position: relative; */
   transition: all 0.5s ease;
 
-  &.fade-enter {
+  /* &.fade-enter {
     opacity: 0;
   }
   &.fade-enter-active {
@@ -19,12 +20,11 @@ const Section = styled.section`
   }
   &.fade-exit-active {
     opacity: 0;
-  }
+  } */
 `
 
 const PostsList = () => {
   const posts = useSelector((state) => state.posts)
-
   console.log(posts)
 
   return (
@@ -40,25 +40,3 @@ const PostsList = () => {
 }
 
 export default PostsList
-
-// import { useState, useEffect } from 'react'
-
-// const duration = '1'
-//   setInProp(true)
-
-//   return () => {
-//     setInProp(false)
-//   }
-// }, [setInProp])
-
-// <CSSTransition
-//   in={inProp}
-//   timeout={duration}
-//   classNames="fade"
-//   appear
-//   mountOnEnter
-// >
-//       </CSSTransition>
-
-// useEffect(() => {
-// const [inProp, setInProp] = useState(false)

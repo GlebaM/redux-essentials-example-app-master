@@ -9,7 +9,10 @@ const ButtonRaw = styled.button`
   &:focus {
     box-shadow: inset 0px 0px 3px rgba(22, 21, 21, 0.925);
     text-shadow: none;
-    perspective: 500px;
+  }
+
+  &:focus-visible {
+    outline: 6px solid black, 3px solid black;
   }
 
   &:not(:disabled) {

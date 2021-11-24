@@ -5,12 +5,12 @@ import styled, { keyframes } from 'styled-components'
 
 const rotate = keyframes`
   from {
-    transform: rotate(0deg) scale(1.3);
+    transform: rotate(0deg) scale(1);
     background-color: #d8a
   }
 
   to {
-    transform: rotate(600deg) scale(0.6);
+    transform: rotate(720deg) scale(0.6);
     background-color: #fc5;
   }
 `
@@ -36,7 +36,8 @@ const moveOut = keyframes`
 
 const Rotate = styled.div`
   display: inline-block;
-  animation: ${rotate} 2s alternate-reverse infinite;
+  height: min-content;
+  animation: ${rotate} 2s alternate-reverse 3 both;
   padding: 0.5rem 1rem;
   border-radius: 12px;
   font-size: 1.2rem;
@@ -47,7 +48,6 @@ const DivTrans = styled.div`
   display: flex;
   width: 100px;
   height: 100px;
-  /* margin: 5rem auto; */
   box-shadow: 0 5px 20px black;
   text-align: center;
   border-radius: 50%;
@@ -87,11 +87,17 @@ const DivTrans = styled.div`
 `
 
 const Wrapper = styled.div`
+  height: max-content;
   width: 90%;
-  margin: 0 auto;
-  justify-content: space-around;
+  margin: 3rem auto;
+  justify-content: space-between;
+  align-items: center;
   display: flex;
   flex: 1;
+
+  [type='button'] {
+    height: fit-content;
+  }
 `
 
 const Anything = () => {

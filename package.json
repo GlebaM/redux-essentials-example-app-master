@@ -23,7 +23,8 @@
     "seedrandom": "^3.0.5",
     "styled-components": "^5.3.3",
     "txtgen": "^2.2.4",
-    "uuid": "^8.3.2"
+    "uuid": "^8.3.2",
+    "uuidv4": "^6.2.12"
   },
   "scripts": {
     "start": "react-scripts start",

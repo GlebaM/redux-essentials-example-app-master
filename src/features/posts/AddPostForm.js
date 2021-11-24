@@ -45,7 +45,6 @@ export const AddPostForm = () => {
           value={title}
           onChange={onTitleChanged}
           placeholder="Type any post title."
-          style={{}}
           autoFocus
         />
         <label htmlFor="postContent">Content:</label>
@@ -55,6 +54,7 @@ export const AddPostForm = () => {
           value={content}
           onChange={onContentChanged}
           placeholder="Type post description."
+          rows="5"
         />
         <Button disabled={!isValid} type="submit">
           Save Post

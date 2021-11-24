@@ -10,6 +10,9 @@ import { Navbar } from './app/Navbar'
 import PostsList from '../src/features/posts/PostsList'
 import AddPostForm from '../src/features/posts/AddPostForm'
 // import Anything from '../src/features/any/Anything'
+// import Container from '../src/features/any/Container'
+// import Practice from '../src/features/any/Practice'
+// import Comics from '../src/features/any/Comics'
 
 function App() {
   return (
@@ -24,12 +27,19 @@ function App() {
               <Fragment>
                 <AddPostForm />
                 <PostsList />
-                {/* <Anything /> */}
               </Fragment>
             )}
           />
           <Redirect to="/" />
         </Switch>
+      </div>
+      {/* <Container>
+        <Anything />
+        <Practice />
+        <Comics />
+      </Container> */}
+      <div className="divv">
+        <p className="parra"></p>
       </div>
     </Router>
   )
